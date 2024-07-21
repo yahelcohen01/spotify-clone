@@ -1,6 +1,6 @@
-
 # Template React
-Template React TypeScript Vite Mui 
+
+Template React TypeScript Vite Mui
 
 ## Setup
 
@@ -9,28 +9,27 @@ Template React TypeScript Vite Mui
 2. Navigate into the project directory
 
    ```bash
-   $ cd 
+   cd
    ```
 
-3. Download modules 
+3. Download modules
 
    ```bash
-   $ npm i
+   pnpm i
    ```
+
 4. Run the app
 
    ```bash
-   $ npm run dev
+   pnpm run dev
    ```
 
 ## Customize
 
 You can change your template because it's just a template
- 
 
 ![Raccoon](https://sa0blogs.blob.core.windows.net/msdevkr/2021/01/2021-01-01-tech-blog-opening-00.png)
 
 ## Authors
 
 - [@Antoine Smet](https://github.com/AntoineSmet/)
-
