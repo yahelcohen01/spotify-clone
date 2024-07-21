@@ -1,0 +1,114 @@
+@import "@openfonts/rubik_all/index.css";
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Rubik !important;
+  font-weight: 600;
+  color: white;
+  /* border: 1px black solid; */
+}
+
+body {
+  background: #000000;
+  margin: 0;
+  font-size: x-large;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.navMenu {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.navMenu a {
+  color: #0f2832;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #67a1ad;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+}
+
+.Home {
+  margin-top: 6%;
+  text-align: center;
+}
+
+.Contact {
+  margin-top: 6%;
+  text-align: center;
+}
+
+td {
+  align-items: center;
+  text-align: center;
+}
+table {
+  align-items: center;
+  border: none;
+  font-size: small;
+}
+.tableHome {
+  color: #4a4646;
+  width: auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  height: "3rem";
+}
+.content {
+  flex: 1 0 auto;
+}
+
+.container {
+  display: flex;
+}
+.left-column {
+  display: flex;
+  flex-direction: column;
+  width: 20%; /* Adjust width as needed */
+}
+.left-column .top,
+.left-column .bottom {
+  flex: 1;
+  border: 1px solid red;
+}
+.right-column {
+  flex: 1;
+  border: 1px solid red;
+}
