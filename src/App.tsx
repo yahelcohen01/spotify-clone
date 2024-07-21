@@ -1,19 +1,14 @@
-import { useState } from "react";
-import "./theme/globals.css";
-import Nav from "./Nav";
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   Card,
-  List,
-  ListItem,
   ListItemIcon,
-  ListItemText,
   MenuItem,
   MenuList,
   Typography,
 } from "@mui/material";
-import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
+import "./theme/globals.css";
 
 function App() {
   return (
