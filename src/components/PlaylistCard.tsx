@@ -5,9 +5,12 @@ interface PlaylistCardProps {
   image: string;
 }
 
-const PlaylistCard: React.FC<PlaylistCardProps> = ({ name, image }) => {
+const PlaylistCard: React.FC<PlaylistCardProps> = ({
+  name,
+  image = "https://via.placeholder.com/150",
+}) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center shadow-lg">
       <img
         src={image}
         alt={name}
