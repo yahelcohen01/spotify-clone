@@ -1,15 +1,34 @@
-import { useMediaQuery } from "@mui/material";
+import { Box, Card } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home";
-import { SmallHome } from "./components/SmallHome";
+import { Sidebar } from "./components/Sidebar";
 import "./theme/globals.css";
+import { useContext } from "react";
+import { ThemeContext, themeContext } from "./theme/Theme";
 
 function App() {
-  const baseView = useMediaQuery("(min-width:650px)");
-
+  const { smallView } = useContext(themeContext) as ThemeContext;
   return (
     <>
-      {baseView && <Home />}
-      {!baseView && <SmallHome />}
+      <Box
+        style={{
+          display: "flex",
+          minHeight: "90vh",
+          padding: "1rem",
+          columnGap: "0.5rem",
+        }}
+      >
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="search"
+            element={
+              <Card style={{ width: smallView ? "90%" : "80%" }}>asd</Card>
+            }
+          />
+        </Routes>
+      </Box>
     </>
   );
 }

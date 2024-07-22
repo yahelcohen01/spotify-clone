@@ -29,7 +29,6 @@ export function SmallHome() {
                 display: "flex",
                 gap: "5%",
                 justifyContent: "end",
-                minWidth: "68px",
               }}
               disableRipple
             >
@@ -42,7 +41,6 @@ export function SmallHome() {
                 display: "flex",
                 gap: "5%",
                 justifyContent: "end",
-                minWidth: "68px",
               }}
               disableRipple
             >

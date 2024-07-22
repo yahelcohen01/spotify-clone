@@ -1,13 +1,14 @@
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
 import { createContext, ReactNode, useMemo } from "react";
 
 type Mode = "dark" | "light";
 
-type DarkModeContext = {
+export type ThemeContext = {
+  smallView: boolean;
   mode: Mode;
 };
 
-const darkModeContext = createContext<DarkModeContext | null>(null);
+const themeContext = createContext<ThemeContext | null>(null);
 
 interface ThemeProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ interface ThemeProps {
 
 export function Theme({ children }: ThemeProps) {
   const mode: Mode = "dark";
+  const smallView = useMediaQuery("(min-width:680px)");
 
   const theme = useMemo(
     () =>
@@ -32,9 +34,10 @@ export function Theme({ children }: ThemeProps) {
 
   return (
     <ThemeProvider theme={theme}>
-      <darkModeContext.Provider value={{ mode }}>
+      <themeContext.Provider value={{ mode, smallView }}>
         {children}
-      </darkModeContext.Provider>
+      </themeContext.Provider>
     </ThemeProvider>
   );
 }
+export { themeContext };
