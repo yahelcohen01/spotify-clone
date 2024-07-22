@@ -1,4 +1,7 @@
 @import "@openfonts/rubik_all/index.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   -webkit-box-sizing: border-box;

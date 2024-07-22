@@ -15,13 +15,13 @@ Stack: React TypeScript Vite Mui
 3. Download modules
 
    ```bash
-   $ npm i
+   pnpm i
    ```
 
 4. Run the app
 
    ```bash
-   $ npm run dev
+   pnpm run dev
    ```
 
 ## Digitech
@@ -31,3 +31,4 @@ Digitech team - feel free to add your changes, please try to maintain the highes
 ## Authors
 
 - [@Yahel Cohen](https://github.com/yahelcohen01/)
+- [@Eliyahu Huri](https://github.com/eliyahuri/)
