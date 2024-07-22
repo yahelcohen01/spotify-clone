@@ -1,6 +1,6 @@
+# Spotify Clone
 
-# Template React
-Template React TypeScript Vite Mui 
+Stack: React TypeScript Vite Mui
 
 ## Setup
 
@@ -9,28 +9,25 @@ Template React TypeScript Vite Mui
 2. Navigate into the project directory
 
    ```bash
-   $ cd 
+   $ cd FOLDER_NAME
    ```
 
-3. Download modules 
+3. Download modules
 
    ```bash
    $ npm i
    ```
+
 4. Run the app
 
    ```bash
    $ npm run dev
    ```
 
-## Customize
+## Digitech
 
-You can change your template because it's just a template
- 
-
-![Raccoon](https://sa0blogs.blob.core.windows.net/msdevkr/2021/01/2021-01-01-tech-blog-opening-00.png)
+Digitech team - feel free to add your changes, please try to maintain the highest code standard you can!
 
 ## Authors
 
-- [@Antoine Smet](https://github.com/AntoineSmet/)
-
+- [@Yahel Cohen](https://github.com/yahelcohen01/)
