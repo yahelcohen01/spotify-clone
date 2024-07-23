@@ -11,7 +11,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
-import { ThemeContext, themeContext } from "../theme/Theme";
+import { ThemeContext, themeContext } from "../../theme/Theme";
 
 interface SidebarProps {}
 

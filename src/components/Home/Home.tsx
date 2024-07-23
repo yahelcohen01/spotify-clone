@@ -1,6 +1,6 @@
 import Card from "@mui/material/Card";
 import { useContext } from "react";
-import { ThemeContext, themeContext } from "../theme/Theme";
+import { ThemeContext, themeContext } from "../../theme/Theme";
 
 export function Home() {
   const { smallView } = useContext(themeContext) as ThemeContext;
