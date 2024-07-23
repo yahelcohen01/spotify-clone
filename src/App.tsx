@@ -1,13 +1,13 @@
 import { Box, Card } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home/Home";
-import { Sidebar } from "./components/global/Sidebar";
+import { Sidebar } from "./components/global/Sidebar/Sidebar";
 import "./theme/globals.css";
 import { useContext } from "react";
 import { ThemeContext, themeContext } from "./theme/Theme";
 
 function App() {
-  const { smallView } = useContext(themeContext) as ThemeContext;
+  const { regularView: smallView } = useContext(themeContext) as ThemeContext;
   return (
     <>
       <Box

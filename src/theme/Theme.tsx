@@ -4,7 +4,7 @@ import { createContext, ReactNode, useMemo } from "react";
 type Mode = "dark" | "light";
 
 export type ThemeContext = {
-  smallView: boolean;
+  regularView: boolean;
   mode: Mode;
 };
 
@@ -16,7 +16,7 @@ interface ThemeProps {
 
 export function Theme({ children }: ThemeProps) {
   const mode: Mode = "dark";
-  const smallView = useMediaQuery("(min-width:680px)");
+  const regularView = useMediaQuery("(min-width:680px)");
 
   const theme = useMemo(
     () =>
@@ -24,8 +24,17 @@ export function Theme({ children }: ThemeProps) {
         palette: {
           mode,
           background: {
-            default: mode === "dark" ? "var(--background-base)" : "#fffff",
-            paper: mode === "dark" ? "#121212" : "#fff",
+            default: mode === "dark" ? "black" : "#fffff",
+            paper: mode === "dark" ? "black" : "#fff",
+          },
+        },
+        components: {
+          MuiCard: {
+            styleOverrides: {
+              root: {
+                backgroundColor: "#121212",
+              },
+            },
           },
         },
       }),
@@ -34,7 +43,7 @@ export function Theme({ children }: ThemeProps) {
 
   return (
     <ThemeProvider theme={theme}>
-      <themeContext.Provider value={{ mode, smallView }}>
+      <themeContext.Provider value={{ mode, regularView }}>
         {children}
       </themeContext.Provider>
     </ThemeProvider>
