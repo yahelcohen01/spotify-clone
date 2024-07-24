@@ -1,11 +1,17 @@
 import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
-import { createContext, ReactNode, useMemo } from "react";
+import { createContext, ReactNode, useMemo, useState } from "react";
+import { SetState } from "../types/types";
 
 type Mode = "dark" | "light";
+type SidebarWidth = "60%" | "30%";
 
 export type ThemeContext = {
+  mode: string;
   regularView: boolean;
-  mode: Mode;
+  sidebar: {
+    sidebarWidth: SidebarWidth;
+    setSideBarWIdth: SetState<SidebarWidth>;
+  };
 };
 
 const themeContext = createContext<ThemeContext | null>(null);
@@ -16,7 +22,8 @@ interface ThemeProps {
 
 export function Theme({ children }: ThemeProps) {
   const mode: Mode = "dark";
-  const regularView = useMediaQuery("(min-width:680px)");
+  const regularView = useMediaQuery("(min-width:1100px)");
+  const [sidebarWidth, setSideBarWIdth] = useState<SidebarWidth>("30%");
 
   const theme = useMemo(
     () =>
@@ -29,10 +36,18 @@ export function Theme({ children }: ThemeProps) {
           },
         },
         components: {
+          MuiTypography: {
+            styleOverrides: {
+              root: {
+                fontWeight: 600,
+              },
+            },
+          },
           MuiCard: {
             styleOverrides: {
               root: {
                 backgroundColor: "#121212",
+                borderRadius: "8px",
               },
             },
           },
@@ -41,9 +56,18 @@ export function Theme({ children }: ThemeProps) {
     [mode]
   );
 
+  const contextValue: ThemeContext = {
+    mode,
+    regularView,
+    sidebar: {
+      sidebarWidth,
+      setSideBarWIdth,
+    },
+  };
+
   return (
     <ThemeProvider theme={theme}>
-      <themeContext.Provider value={{ mode, regularView }}>
+      <themeContext.Provider value={contextValue}>
         {children}
       </themeContext.Provider>
     </ThemeProvider>

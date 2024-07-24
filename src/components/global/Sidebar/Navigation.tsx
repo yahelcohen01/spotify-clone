@@ -32,20 +32,23 @@ export const Navigation = () => {
           >
             <ListItemIcon
               sx={{
+                justifyContent: "center",
+                display: "flex",
                 opacity: pathname === "/" ? 1 : 0.6,
                 "&:hover": { opacity: 1 },
               }}
             >
               {pathname === "/" ? (
-                <HomeIcon fontSize="large" />
+                <HomeIcon sx={{ fontSize: "31px" }} />
               ) : (
-                <HomeOutlinedIcon fontSize="large" />
+                <HomeOutlinedIcon sx={{ fontSize: "31px" }} />
               )}
             </ListItemIcon>
             {regularView && (
               <Typography
-                fontWeight={700}
                 sx={{
+                  position: "fixed",
+                  left: "70px",
                   "&:hover": {
                     transition: 0.5,
                     color: "white",
@@ -80,13 +83,19 @@ export const Navigation = () => {
             }}
             disableRipple
           >
-            <ListItemIcon sx={{ opacity: pathname === "/search" ? 1 : 0.6 }}>
-              <SearchIcon fontSize="large" />
+            <ListItemIcon
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                opacity: pathname === "/search" ? 1 : 0.6,
+              }}
+            >
+              <SearchIcon sx={{ fontSize: "33px" }} />
             </ListItemIcon>
             {regularView && (
               <Typography
-                fontWeight={700}
                 color={pathname === "/search" ? "white" : "#b3b3b3"}
+                sx={{ position: "fixed", left: "70px" }}
               >
                 Search
               </Typography>

@@ -7,15 +7,14 @@ import { useContext } from "react";
 import { ThemeContext, themeContext } from "./theme/Theme";
 
 function App() {
-  const { regularView: smallView } = useContext(themeContext) as ThemeContext;
   return (
     <>
       <Box
         style={{
           display: "flex",
-          minHeight: "90vh",
-          padding: "1rem",
-          columnGap: "0.5rem",
+          minHeight: "87vh",
+          padding: ".5rem",
+          columnGap: ".5rem",
         }}
       >
         <Sidebar />
@@ -23,9 +22,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="search"
-            element={
-              <Card style={{ width: smallView ? "90%" : "80%" }}>asd</Card>
-            }
+            element={<Card style={{ width: "100%" }}>asd</Card>}
+          />
+          <Route
+            path="Library"
+            element={<Card style={{ width: "100%" }}>asd</Card>}
           />
         </Routes>
       </Box>
