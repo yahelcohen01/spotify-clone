@@ -5,6 +5,7 @@ import { Home } from "./components/Home/Home";
 import { Sidebar } from "./components/global/Sidebar/Sidebar";
 import "./theme/globals.css";
 import { ThemeContext, themeContext } from "./theme/Theme";
+import { Controls } from "./components/global/AudioControl";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             element={<Card style={{ width: "100%" }}>asd</Card>}
           />
         </Routes>
+      </Box>
+      <Box padding={".5rem"}>
+        <Controls />
       </Box>
     </>
   );

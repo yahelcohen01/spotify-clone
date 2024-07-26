@@ -1,0 +1,41 @@
+import { Box, ListItemIcon, Typography } from "@mui/material";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { themeContext, ThemeContext } from "../../../../theme/Theme";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
+
+export const LibraryButton = () => {
+  const { pathname } = useLocation();
+  const { regularView } = useContext(themeContext) as ThemeContext;
+
+  return (
+    <Link to="/Library">
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "1rem",
+          opacity: pathname === "/Library" ? 1 : 0.6,
+          "&:hover": { opacity: 1 },
+        }}
+      >
+        <ListItemIcon sx={{}}>
+          {pathname === "/Library" ? (
+            <LibraryBooksIcon sx={{ fontSize: "29px" }} />
+          ) : (
+            <LibraryBooksOutlinedIcon sx={{ fontSize: "29px" }} />
+          )}
+        </ListItemIcon>
+        {regularView && (
+          <Typography
+            alignSelf={"center"}
+            sx={{ position: "fixed", left: "70px" }}
+          >
+            Your Library
+          </Typography>
+        )}
+      </Box>
+    </Link>
+  );
+};
