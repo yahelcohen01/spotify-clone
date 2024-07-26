@@ -1,20 +1,45 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CardHeader,
+  Chip,
   IconButton,
   ListItemIcon,
+  styled,
   Typography,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
+import SearchIcon from "@mui/icons-material/Search";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import { useContext } from "react";
 import { ThemeContext, themeContext } from "../../../theme/Theme";
+
+const BootstrapButton = styled(Button)({
+  boxShadow: "none",
+  fontWeight: 500,
+  color: "#b3b3b3",
+  textTransform: "none",
+  fontSize: ".6em",
+  padding: "6px 12px",
+  lineHeight: 1.5,
+  transition: "all 0.3s ease",
+  backgroundColor: "transparent",
+  borderColor: "transparent",
+  "&:hover": {
+    backgroundColor: "transparent",
+    borderColor: "transparent",
+    boxShadow: "none",
+    color: "#fff",
+    transform: "scale(1.1)",
+  },
+});
 
 export const Library = () => {
   const { pathname } = useLocation();
@@ -82,7 +107,23 @@ export const Library = () => {
         )}
       </Box>
 
-      <CardContent>adcdscs</CardContent>
+      <CardContent sx={{ padding: ".5rem", display: "grid", rowGap: ".5rem" }}>
+        <Box>
+          <Chip label={"Playlists"} size="medium" sx={{ fontWeight: 400 }} />
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <IconButton>
+            <SearchIcon />
+          </IconButton>
+          <BootstrapButton
+            variant="contained"
+            disableRipple
+            // sx={{ fontSize: ".6em", fontWeight: 400, lineHeight: "normal" }}
+          >
+            Recents
+          </BootstrapButton>
+        </Box>
+      </CardContent>
     </Card>
   );
 };

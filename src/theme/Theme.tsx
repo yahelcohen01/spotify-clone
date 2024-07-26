@@ -36,6 +36,13 @@ export function Theme({ children }: ThemeProps) {
           },
         },
         components: {
+          MuiChip: {
+            styleOverrides: {
+              root: {
+                fontWeight: 400,
+              },
+            },
+          },
           MuiTypography: {
             styleOverrides: {
               root: {
