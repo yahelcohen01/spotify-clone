@@ -1,11 +1,9 @@
 import { Box, Typography } from "@mui/material";
-import starboy from "../../../../public/theWeeknd_starboy.png";
-import { Link } from "@tanstack/react-router";
 
 const exampleTrack = {
   name: "I Feel It Coming",
   artists: ["The Weeknd", "Daft Punk"],
-  image: starboy,
+  image: "/theWeeknd_starboy.png",
 };
 
 export const Controls = () => {
