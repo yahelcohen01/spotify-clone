@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { themeContext, ThemeContext } from "../../../theme/Theme";
 import {
   Card,
@@ -11,9 +10,12 @@ import {
 import HomeIcon from "@mui/icons-material/Home";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link, useRouterState } from "@tanstack/react-router";
 
 export const Navigation = () => {
-  const { pathname } = useLocation();
+  const {
+    location: { pathname },
+  } = useRouterState();
   const { regularView } = useContext(themeContext) as ThemeContext;
   return (
     <Card sx={{ display: "grid", alignItems: "center" }}>
