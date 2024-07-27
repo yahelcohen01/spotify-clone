@@ -36,6 +36,13 @@ export function Theme({ children }: ThemeProps) {
           },
         },
         components: {
+          MuiCardContent: {
+            styleOverrides: {
+              root: {
+                padding: "0",
+              },
+            },
+          },
           MuiChip: {
             styleOverrides: {
               root: {

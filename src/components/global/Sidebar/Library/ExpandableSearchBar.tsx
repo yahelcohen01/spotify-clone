@@ -22,23 +22,27 @@ const Search = styled('div')(({ theme }) => ({
   left: -3,
   width: 35,
   height: 35,
-  borderRadius: '50%',
   transition: 'all 0.5s',
   zIndex: 4,
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-
+  
 }));
 
 const InputContainer = styled('div')({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  width: 50,
+  width: 35,
   height: 35,
+  borderRadius: '50%',
+
   transition: 'all 0.5s',
+  '&:hover':{
+    backgroundColor: 'black',
+},
   '&:focus-within': {
     width: 190,
   },
@@ -46,7 +50,7 @@ const InputContainer = styled('div')({
 
 const InputIcon = styled(SearchIcon)(({ theme }) => ({
   position: 'absolute',
-  left: 10,
+  left: 6,
   zIndex: 6,
   pointerEvents: 'none',
   color: 'white',
@@ -62,12 +66,13 @@ const Input = styled('input')(({ theme }) => ({
   width: '100%',
   height: '100%',
   paddingLeft: 40,
-  fontSize:12,
+  fontSize: 12,
   fontWeight : 'normal',
 
   outline: 'none',
   border: 'none',
   background: 'black',
+  borderRadius: 5,
   color: 'white',
   transition: 'all 0.5s',
   opacity: 0,
