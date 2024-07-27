@@ -1,7 +1,7 @@
 import { Card } from "@mui/material";
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/library")({
+export const Route = createFileRoute("/_sidebarLayout/library")({
   component: LibraryRoute,
 });
 

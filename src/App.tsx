@@ -1,8 +1,19 @@
 import "./theme/globals.css";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import {
+  NotFoundRoute,
+  RouterProvider,
+  createRouter,
+} from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
+import { Route } from "./routes/__root";
+import { NotFound } from "./components/notFound/NotFound";
 
-const router = createRouter({ routeTree });
+const notFoundRoute = new NotFoundRoute({
+  getParentRoute: () => Route,
+  component: () => <NotFound />,
+});
+
+const router = createRouter({ routeTree, notFoundRoute });
 
 declare module "@tanstack/react-router" {
   interface Register {

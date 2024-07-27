@@ -11,42 +11,52 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as SearchImport } from './routes/search'
-import { Route as LibraryImport } from './routes/library'
-import { Route as IndexImport } from './routes/index'
+import { Route as SidebarLayoutImport } from './routes/_sidebarLayout'
+import { Route as SidebarLayoutIndexImport } from './routes/_sidebarLayout/index'
+import { Route as SidebarLayoutSearchImport } from './routes/_sidebarLayout/search'
+import { Route as SidebarLayoutLibraryImport } from './routes/_sidebarLayout/library'
 
 // Create/Update Routes
 
-const SearchRoute = SearchImport.update({
-  path: '/search',
+const SidebarLayoutRoute = SidebarLayoutImport.update({
+  id: '/_sidebarLayout',
   getParentRoute: () => rootRoute,
 } as any)
 
-const LibraryRoute = LibraryImport.update({
-  path: '/library',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const IndexRoute = IndexImport.update({
+const SidebarLayoutIndexRoute = SidebarLayoutIndexImport.update({
   path: '/',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => SidebarLayoutRoute,
+} as any)
+
+const SidebarLayoutSearchRoute = SidebarLayoutSearchImport.update({
+  path: '/search',
+  getParentRoute: () => SidebarLayoutRoute,
+} as any)
+
+const SidebarLayoutLibraryRoute = SidebarLayoutLibraryImport.update({
+  path: '/library',
+  getParentRoute: () => SidebarLayoutRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      preLoaderRoute: typeof IndexImport
+    '/_sidebarLayout': {
+      preLoaderRoute: typeof SidebarLayoutImport
       parentRoute: typeof rootRoute
     }
-    '/library': {
-      preLoaderRoute: typeof LibraryImport
-      parentRoute: typeof rootRoute
+    '/_sidebarLayout/library': {
+      preLoaderRoute: typeof SidebarLayoutLibraryImport
+      parentRoute: typeof SidebarLayoutImport
     }
-    '/search': {
-      preLoaderRoute: typeof SearchImport
-      parentRoute: typeof rootRoute
+    '/_sidebarLayout/search': {
+      preLoaderRoute: typeof SidebarLayoutSearchImport
+      parentRoute: typeof SidebarLayoutImport
+    }
+    '/_sidebarLayout/': {
+      preLoaderRoute: typeof SidebarLayoutIndexImport
+      parentRoute: typeof SidebarLayoutImport
     }
   }
 }
@@ -54,9 +64,11 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren([
-  IndexRoute,
-  LibraryRoute,
-  SearchRoute,
+  SidebarLayoutRoute.addChildren([
+    SidebarLayoutLibraryRoute,
+    SidebarLayoutSearchRoute,
+    SidebarLayoutIndexRoute,
+  ]),
 ])
 
 /* prettier-ignore-end */

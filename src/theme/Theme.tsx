@@ -31,8 +31,8 @@ export function Theme({ children }: ThemeProps) {
         palette: {
           mode,
           background: {
-            default: mode === "dark" ? "black" : "#fffff",
-            paper: mode === "dark" ? "black" : "#fff",
+            default: mode === "dark" ? "#121212" : "#fffff",
+            paper: mode === "dark" ? "#121212" : "#fff",
           },
         },
         components: {

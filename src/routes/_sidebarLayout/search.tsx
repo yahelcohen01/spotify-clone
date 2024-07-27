@@ -2,7 +2,7 @@ import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Card } from "@mui/material";
 
-export const Route = createFileRoute("/search")({
+export const Route = createFileRoute("/_sidebarLayout/search")({
   component: SearchRoute,
 });
 
