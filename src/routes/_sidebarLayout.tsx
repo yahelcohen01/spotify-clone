@@ -18,9 +18,7 @@ export const Route = createFileRoute("/_sidebarLayout")({
         <Sidebar />
         <Outlet />
       </Box>
-      <Box padding={".5rem"}>
-        <Controls />
-      </Box>
+      <Controls />
     </>
   ),
 });
