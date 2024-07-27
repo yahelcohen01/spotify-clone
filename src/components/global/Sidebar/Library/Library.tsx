@@ -67,7 +67,7 @@ export const Library = () => {
             </Box>
             <Grid container margin={1}>
               <ExpandableSearchBar/>
-               <Grid item xs={3}>
+               <Grid item xs={4} container>
                     <SortButton variant="contained" disableRipple>
                          Recents
                     </SortButton>

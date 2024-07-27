@@ -20,8 +20,8 @@ const Search = styled('div')(({ theme }) => ({
   right: 0,
   bottom: 0,
   left: -3,
-  width: 35,
-  height: 35,
+  width: 30,
+  height: 30,
   transition: 'all 0.5s',
   zIndex: 4,
   cursor: 'pointer',
@@ -35,14 +35,15 @@ const InputContainer = styled('div')({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  width: 35,
-  height: 35,
+  width: 30,
+  height: 30,
   borderRadius: '50%',
 
   transition: 'all 0.5s',
-  '&:hover':{
-    backgroundColor: 'black',
-},
+  "&:not(:focus-within):hover": {
+    cursor: "pointer",
+    boxShadow: "inset 0 0 100px 100px rgba(255, 255, 255, 0.1)",
+  },
   '&:focus-within': {
     width: 190,
   },
@@ -71,7 +72,7 @@ const Input = styled('input')(({ theme }) => ({
 
   outline: 'none',
   border: 'none',
-  background: 'black',
+  background: 'rgba(255, 255, 255, 0.1)',
   borderRadius: 5,
   color: 'white',
   transition: 'all 0.5s',
@@ -109,7 +110,7 @@ const SearchComponent: React.FC = () => {
 
 export const ExpandableSearchBar: React.FC = () => {
   return (
-    <Grid item xs={9}>
+    <Grid item xs={8}>
       <SearchComponent />
     </Grid>
   );
