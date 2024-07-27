@@ -18,4 +18,5 @@ body {
   font-size: x-large;
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: normal;
 }
