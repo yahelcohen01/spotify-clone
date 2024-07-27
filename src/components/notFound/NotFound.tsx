@@ -4,25 +4,8 @@ import { Link } from "@tanstack/react-router";
 
 export const NotFound = () => {
   return (
-    <div
-      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      // style={{
-      //   position: "fixed",
-      //   top: "50%",
-      //   left: "50%",
-      //   transform: "translate(-50%, -50%)",
-      // }}
-    >
-      <div
-        className="p-5 grid place-items-center gap-8"
-        // style={{
-        //   padding: "20px",
-        //   display: "grid",
-        //   alignItems: "center",
-        //   justifyItems: "center",
-        //   gap: "2rem",
-        // }}
-      >
+    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="p-5 grid place-items-center gap-8">
         <img className="border-r-1" src={logo} alt={"logo"} loading="lazy" />
         <Typography variant="h3" fontWeight={500}>
           Page not found
