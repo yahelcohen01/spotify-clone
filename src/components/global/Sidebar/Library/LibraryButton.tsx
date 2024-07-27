@@ -1,16 +1,17 @@
 import { Box, ListItemIcon, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { themeContext, ThemeContext } from "../../../../theme/Theme";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
 
 export const LibraryButton = () => {
-  const { pathname } = useLocation();
+  const {
+    location: { pathname },
+  } = useRouterState();
   const { regularView } = useContext(themeContext) as ThemeContext;
-
   return (
-    <Link to="/Library">
+    <Link to="/library">
       <Box
         sx={{
           display: "flex",
