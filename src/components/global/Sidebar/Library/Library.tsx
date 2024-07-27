@@ -3,11 +3,8 @@ import {
   Card,
   CardContent,
   Chip,
-  Grid,
   IconButton,
   ImageListItem,
-  List,
-  Tabs,
   Tooltip,
   Typography,
 } from "@mui/material";
