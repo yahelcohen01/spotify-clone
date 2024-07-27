@@ -32,3 +32,4 @@ Digitech team - feel free to add your changes, please try to maintain the highes
 
 - [@Yahel Cohen](https://github.com/yahelcohen01/)
 - [@Eliyahu Huri](https://github.com/eliyahuri/)
+- [@Ayelet Adamsky](https://github.com/Ayelet-123/)

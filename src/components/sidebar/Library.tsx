@@ -5,6 +5,7 @@ import {
   CardContent,
   CardHeader,
   Chip,
+  Grid,
   IconButton,
   ListItemIcon,
   styled,
@@ -19,7 +20,8 @@ import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import { useContext } from "react";
-import { ThemeContext, themeContext } from "../../../theme/Theme";
+import { ThemeContext, themeContext } from "../../theme/Theme";
+import { ExpandableSearchBar } from "./ExpandableSearchBar";
 
 const BootstrapButton = styled(Button)({
   boxShadow: "none",
@@ -111,18 +113,17 @@ export const Library = () => {
         <Box>
           <Chip label={"Playlists"} size="medium" sx={{ fontWeight: 400 }} />
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <IconButton>
-            <SearchIcon />
-          </IconButton>
+        <Grid container >
+        <ExpandableSearchBar/>
+        <Grid item xs={3}>
           <BootstrapButton
             variant="contained"
             disableRipple
-            // sx={{ fontSize: ".6em", fontWeight: 400, lineHeight: "normal" }}
           >
             Recents
           </BootstrapButton>
-        </Box>
+        </Grid>
+        </Grid>
       </CardContent>
     </Card>
   );
