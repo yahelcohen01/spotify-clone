@@ -1,6 +1,6 @@
+import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   Chip,
@@ -9,38 +9,34 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import { useContext } from "react";
 import { ThemeContext, themeContext } from "../../../../theme/Theme";
-import { SortButton } from "./SortButton";
-import { LibraryButton } from "./LibraryButton";
 import { ButtonsGroup } from "./ButtonsGroup";
-import LikedSongs from "../../../../../public/liked_songs.jpg";
-import DarkNecessities from "../../../../../public/dark_necessities_red_hot_chili_peppers.jpg";
-import rihannaLoud from "../../../../../public/rihanna_loud.png";
+import { LibraryButton } from "./LibraryButton";
+import { SortButton } from "./SortButton";
 
 const Playlists = [
   {
     name: "Liked Songs",
     type: "Playlist",
     owner: "Yahel",
-    image: LikedSongs,
+    image: "/liked_songs.jpg",
   },
   {
     name: "Loud",
     type: "Album",
     owner: "Rihanna",
-    image: rihannaLoud,
+    image: "/rihanna_loud.png",
   },
   {
     name: "Dark Necessities",
     type: "Album",
     owner: "Red Hot Chili Peppers",
-    image: DarkNecessities,
+    image: "/dark_necessities_red_hot_chili_peppers.jpg",
   },
 ];
 // src/components/Popover.tsx
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Popover: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
