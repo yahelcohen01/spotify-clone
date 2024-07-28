@@ -4,17 +4,16 @@ import {
   Card,
   CardContent,
   Chip,
+  Grid,
   IconButton,
   Tooltip,
 } from "@mui/material";
 import { useContext } from "react";
-import DarkNecessities from "../../../../../public/dark_necessities_red_hot_chili_peppers.jpg";
-import LikedSongs from "../../../../../public/liked_songs.jpg";
-import rihannaLoud from "../../../../../public/rihanna_loud.png";
+import { LibraryPlaylistCard } from "./LibraryPlaylistCard";
 import { ThemeContext, themeContext } from "../../../../theme/Theme";
 import { ButtonsGroup } from "./ButtonsGroup";
+import ExpandableSearchBar from "./ExpandableSearchBar";
 import { LibraryButton } from "./LibraryButton";
-import { LibraryPlaylistCard } from "./LibraryPlaylistCard";
 import { SortButton } from "./SortButton";
 
 export type PlaylistInfo = {
@@ -29,19 +28,19 @@ const Playlists: PlaylistInfo[] = [
     name: "Liked Songs",
     type: "Playlist",
     owner: "Yahel",
-    image: LikedSongs,
+    image: "/liked_songs.jpg",
   },
   {
     name: "Loud",
     type: "Album",
     owner: "Rihanna",
-    image: rihannaLoud,
+    image: "/rihanna_loud.png",
   },
   {
     name: "Dark Necessities",
     type: "Album",
     owner: "Red Hot Chili Peppers",
-    image: DarkNecessities,
+    image: "/dark_necessities_red_hot_chili_peppers.jpg",
   },
 ];
 
@@ -72,9 +71,7 @@ export const Library = () => {
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Tooltip title="Search in Your Library" placement="top-start">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
+                <ExpandableSearchBar />
               </Tooltip>
               <SortButton />
             </Box>
