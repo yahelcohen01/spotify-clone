@@ -1,13 +1,7 @@
 import { SongInfo } from "./SongInfo";
 import { AudioControls } from "./AudioControls";
 import "./style.css";
-import { Box, Typography } from "@mui/material";
-
-const exampleTrack = {
-  name: "I Feel It Coming",
-  artists: ["The Weeknd", "Daft Punk"],
-  image: "/theWeeknd_starboy.png",
-};
+import { Box } from "@mui/material";
 
 export const Controls = () => {
   return (

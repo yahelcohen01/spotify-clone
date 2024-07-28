@@ -110,7 +110,9 @@ export const AudioControls = () => {
           </Tooltip>
         </Box>
       </Box>
-      <Box>ooooo</Box>
+      <Box display={"flex"} justifyContent={"center"}>
+        Audio progress bar section
+      </Box>
     </>
   );
 };
