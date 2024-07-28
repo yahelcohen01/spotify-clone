@@ -36,6 +36,13 @@ export function Theme({ children }: ThemeProps) {
           },
         },
         components: {
+          MuiTooltip: {
+            styleOverrides: {
+              tooltip: {
+                backgroundColor: "#2f2f2f",
+              },
+            },
+          },
           MuiCardContent: {
             styleOverrides: {
               root: {
