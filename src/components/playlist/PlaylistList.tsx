@@ -1,17 +1,23 @@
-// bunch of PlaylistCard components
-
-import { type Playlist } from "../../types/playlist";
+import React from "react";
+import type { PlaylistList } from "../../types/playlist";
 import PlaylistCard from "./PlaylistCard";
+
 interface PlaylistListProps {
-  playlists: Playlist[];
+  playlistlist: PlaylistList;
 }
 
-const PlaylistList: React.FC<PlaylistListProps> = ({ playlists }) => {
+export const PlaylistListComponent: React.FC<PlaylistListProps> = ({
+  playlistlist,
+}) => {
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-      {playlists.map((playlist) => (
-        <PlaylistCard key={playlist.id} {...playlist} />
-      ))}
+    <div className="p-4">
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 pt-2">
+        {playlistlist.playlists.map((playlist) => (
+          <PlaylistCard key={playlist.id} playlist={playlist} />
+        ))}
+      </div>
     </div>
   );
 };
+
+export default PlaylistListComponent;
