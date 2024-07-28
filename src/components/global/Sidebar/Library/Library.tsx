@@ -121,15 +121,6 @@ export const Library = () => {
                 <SortButton />
               </Grid>
             </Grid>
-
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-              <Tooltip title="Search in Your Library" placement="top-start">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
-              </Tooltip>
-              <SortButton />
-            </Box>
           </>
         )}
         {Playlists.map((item, i) => (
