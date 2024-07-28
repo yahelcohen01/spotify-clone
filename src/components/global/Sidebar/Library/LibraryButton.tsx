@@ -21,7 +21,7 @@ export const LibraryButton = () => {
           "&:hover": { opacity: 1 },
         }}
       >
-        <ListItemIcon sx={{}}>
+        <ListItemIcon>
           {pathname === "/Library" ? (
             <LibraryBooksIcon sx={{ fontSize: "29px" }} />
           ) : (

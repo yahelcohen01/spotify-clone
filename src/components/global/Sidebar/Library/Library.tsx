@@ -1,44 +1,94 @@
+import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   Card,
   CardContent,
   Chip,
   Grid,
+  IconButton,
   ImageListItem,
-  
+  Tooltip,
   Typography,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import { useContext } from "react";
 import { ThemeContext, themeContext } from "../../../../theme/Theme";
-import { SortButton } from "./SortButton";
-import { LibraryButton } from "./LibraryButton";
 import { ButtonsGroup } from "./ButtonsGroup";
-import LikedSongs from "../../../../../public/liked_songs.jpg";
-import DarkNecessities from "../../../../../public/dark_necessities_red_hot_chili_peppers.jpg";
-import rihannaLoud from "../../../../../public/rihanna_loud.png";
 import ExpandableSearchBar from "./ExpandableSearchBar";
+import { LibraryButton } from "./LibraryButton";
+import { SortButton } from "./SortButton";
 
 const Playlists = [
   {
     name: "Liked Songs",
     type: "Playlist",
     owner: "Yahel",
-    image: LikedSongs,
+    image: "/liked_songs.jpg",
   },
   {
     name: "Loud",
     type: "Album",
     owner: "Rihanna",
-    image: rihannaLoud,
+    image: "/rihanna_loud.png",
   },
   {
     name: "Dark Necessities",
     type: "Album",
     owner: "Red Hot Chili Peppers",
-    image: DarkNecessities,
+    image: "/dark_necessities_red_hot_chili_peppers.jpg",
   },
 ];
+// src/components/Popover.tsx
+import React, { useEffect, useRef, useState } from "react";
+
+const Popover: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const togglePopover = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      popoverRef.current &&
+      buttonRef.current &&
+      !popoverRef.current.contains(event.target as Node) &&
+      !buttonRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="relative">
+      <button
+        ref={buttonRef}
+        onClick={togglePopover}
+        className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+      >
+        Click me
+      </button>
+      {isOpen && (
+        <div
+          ref={popoverRef}
+          className={`absolute z-10 p-4 mt-2 bg-white border border-gray-300 rounded shadow-lg transition-opacity duration-200 ${
+            isOpen ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          This is a popover!
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const Library = () => {
   const { regularView } = useContext(themeContext) as ThemeContext;
@@ -66,14 +116,20 @@ export const Library = () => {
               />
             </Box>
             <Grid container margin={1}>
-              <ExpandableSearchBar/>
-               <Grid item xs={4} container>
-                    <SortButton variant="contained" disableRipple>
-                         Recents
-                    </SortButton>
-                </Grid>
-             </Grid>
-           
+              <ExpandableSearchBar />
+              <Grid item xs={4} container>
+                <SortButton />
+              </Grid>
+            </Grid>
+
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Tooltip title="Search in Your Library" placement="top-start">
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
+              </Tooltip>
+              <SortButton />
+            </Box>
           </>
         )}
         {Playlists.map((item, i) => (

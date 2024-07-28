@@ -1,12 +1,17 @@
-import { Box, Typography } from "@mui/material";
-import logo from "../../../public/logo.svg";
+import { Typography } from "@mui/material";
+
 import { Link } from "@tanstack/react-router";
 
 export const NotFound = () => {
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <div className="p-5 grid place-items-center gap-8">
-        <img className="border-r-1" src={logo} alt={"logo"} loading="lazy" />
+        <img
+          className="border-r-1"
+          src="/logo.svg"
+          alt={"logo"}
+          loading="lazy"
+        />
         <Typography variant="h3" fontWeight={500}>
           Page not found
         </Typography>
