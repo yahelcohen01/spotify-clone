@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   Chip,
+  Grid,
   IconButton,
   ImageListItem,
   Tooltip,
@@ -12,6 +13,7 @@ import {
 import { useContext } from "react";
 import { ThemeContext, themeContext } from "../../../../theme/Theme";
 import { ButtonsGroup } from "./ButtonsGroup";
+import ExpandableSearchBar from "./ExpandableSearchBar";
 import { LibraryButton } from "./LibraryButton";
 import { SortButton } from "./SortButton";
 
@@ -115,9 +117,7 @@ export const Library = () => {
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Tooltip title="Search in Your Library" placement="top-start">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
+                <ExpandableSearchBar />
               </Tooltip>
               <SortButton />
             </Box>
