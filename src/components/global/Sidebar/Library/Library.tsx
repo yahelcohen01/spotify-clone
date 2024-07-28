@@ -115,12 +115,12 @@ export const Library = () => {
                 sx={{ fontWeight: 400 }}
               />
             </Box>
-            <Grid container margin={1}>
-              <ExpandableSearchBar />
-              <Grid item xs={4} container>
-                <SortButton />
-              </Grid>
-            </Grid>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Tooltip title="Search in Your Library" placement="top-start">
+                <ExpandableSearchBar />
+              </Tooltip>
+              <SortButton />
+            </Box>
           </>
         )}
         {Playlists.map((item, i) => (
