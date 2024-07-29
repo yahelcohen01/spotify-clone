@@ -1,8 +1,8 @@
 import { Box } from "@mui/system";
 import { useContext } from "react";
 import { ThemeContext, themeContext } from "../../../theme/Theme";
-import { Navigation } from "./Navigation";
 import { Library } from "./Library/Library";
+import { Navigation } from "./Navigation";
 
 interface SidebarProps {}
 

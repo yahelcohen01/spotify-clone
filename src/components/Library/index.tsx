@@ -35,7 +35,7 @@ const Library: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col h-full overflow-y-scroll p-4">
+    <div className="flex flex-col max-h-full overflow-y-scroll p-4">
       {playlistListArray.map((playlistlist, index) => (
         <div key={index} className="mb-8">
           <p className="text-2xl font-semibold text-green-600 mb-2">
