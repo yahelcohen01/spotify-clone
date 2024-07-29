@@ -1,13 +1,6 @@
-import {
-  Button,
-  ListItemIcon,
-  Menu,
-  MenuItem,
-  styled,
-  Typography,
-} from "@mui/material";
-import { useEffect, useRef, useState } from "react";
 import CheckIcon from "@mui/icons-material/Check";
+import { Button, Menu, MenuItem, Typography } from "@mui/material";
+import { useState } from "react";
 
 const sortingOptions = [
   "Recents",
@@ -19,6 +12,7 @@ const sortingOptions = [
 export const SortButton = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(1);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const open = Boolean(anchorEl);
 
   const openPopover = (e: React.MouseEvent<HTMLElement>) => {

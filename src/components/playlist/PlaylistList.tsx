@@ -15,3 +15,4 @@ const PlaylistList: React.FC<PlaylistListProps> = ({ playlists }) => {
     </div>
   );
 };
+export default PlaylistList;

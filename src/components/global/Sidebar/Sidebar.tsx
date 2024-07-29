@@ -7,6 +7,7 @@ import { Library } from "./Library/Library";
 
 interface SidebarProps {}
 
+// eslint-disable-next-line no-empty-pattern
 export const Sidebar = ({}: SidebarProps) => {
   const {
     regularView,

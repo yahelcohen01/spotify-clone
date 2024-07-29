@@ -1,11 +1,8 @@
-import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   Card,
   CardContent,
   Chip,
-  Grid,
-  IconButton,
   ImageListItem,
   Tooltip,
   Typography,
@@ -40,7 +37,7 @@ const Playlists = [
 // src/components/Popover.tsx
 import React, { useEffect, useRef, useState } from "react";
 
-const Popover: React.FC = () => {
+export const Popover: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
