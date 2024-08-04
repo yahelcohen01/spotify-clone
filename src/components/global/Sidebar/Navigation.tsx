@@ -49,8 +49,7 @@ export const Navigation = () => {
             {regularView && (
               <Typography
                 sx={{
-                  position: "fixed",
-                  left: "70px",
+                 
                   "&:hover": {
                     transition: 0.5,
                     color: "white",
@@ -97,7 +96,6 @@ export const Navigation = () => {
             {regularView && (
               <Typography
                 color={pathname === "/search" ? "white" : "#b3b3b3"}
-                sx={{ position: "fixed", left: "70px" }}
               >
                 Search
               </Typography>

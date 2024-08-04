@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { createFileRoute } from "@tanstack/react-router";
 import { Sidebar } from "../components/global/Sidebar/Sidebar";
 import { Outlet } from "@tanstack/react-router";
@@ -6,21 +6,20 @@ import { Controls } from "../components/global/AudioControl";
 
 export const Route = createFileRoute("/_sidebarLayout")({
   component: () => (
-    <>
-      <Box
+    <Grid container height="100%">
+      <Grid item xs={12}
         style={{
           display: "flex",
-          minHeight: "87vh",
           padding: ".5rem",
           columnGap: ".5rem",
         }}
       >
         <Sidebar />
         <Outlet />
-      </Box>
-      <Box padding={".5rem"}>
+      </Grid>
+      <Grid item xs={12} padding={".5rem"}>
         <Controls />
-      </Box>
-    </>
+      </Grid>
+    </Grid>
   ),
 });

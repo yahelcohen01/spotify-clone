@@ -18,7 +18,7 @@ export const Sidebar = ({}: SidebarProps) => {
         display: "grid",
         width: regularView ? sidebarWidth : "68px !important",
         minWidth: "68px",
-        height: "87vh",
+        height: '100%',
         gridTemplateRows: "20% 80%",
       }}
     >
