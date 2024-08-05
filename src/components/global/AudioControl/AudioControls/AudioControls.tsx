@@ -6,6 +6,7 @@ import LastPageRoundedIcon from "@mui/icons-material/LastPageRounded";
 import RepeatRoundedIcon from "@mui/icons-material/RepeatRounded";
 import { useState } from "react";
 import PauseCircleIcon from "@mui/icons-material/PauseCircle";
+import { AudioSlider } from "./AudioSlider";
 
 export const AudioControls = () => {
   const [isShrinking, setIsShrinking] = useState(false);
@@ -63,7 +64,7 @@ export const AudioControls = () => {
                 className={`shrink-button ${isShrinking ? "shrink" : ""}`}
                 onClick={handleClick}
               >
-                <PlayCircleIcon sx={{ fontSize: "40px" }} />
+                <PlayCircleIcon sx={{ fontSize: "40px" }} color="primary" />
               </IconButton>
             </Tooltip>
           ) : (
@@ -110,8 +111,12 @@ export const AudioControls = () => {
           </Tooltip>
         </Box>
       </Box>
-      <Box display={"flex"} justifyContent={"center"}>
-        Audio progress bar section
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        columnGap={".5rem"}
+      >
+        <AudioSlider />
       </Box>
     </>
   );

@@ -34,6 +34,9 @@ export function Theme({ children }: ThemeProps) {
             default: mode === "dark" ? "#121212" : "#fffff",
             paper: mode === "dark" ? "#121212" : "#fff",
           },
+          primary: {
+            main: "#121212",
+          },
         },
         components: {
           MuiTooltip: {
@@ -67,7 +70,7 @@ export function Theme({ children }: ThemeProps) {
           MuiCard: {
             styleOverrides: {
               root: {
-                backgroundColor: "#121212",
+                backgroundColor: "#0a0a0a",
                 borderRadius: "8px",
               },
             },

@@ -1,15 +1,12 @@
-import { Button, Menu, MenuItem, Typography } from "@mui/material";
+import { Menu, MenuItem, Typography } from "@mui/material";
 import { useState } from "react";
-import CheckIcon from "@mui/icons-material/Check";
 
-const sortingOptions = [
-  "Recents",
-  "Recentley Added",
-  "Alphabetical",
-  "Creator",
-];
+interface MenuPopperProps {
+  menuTitle?: string;
+  options: string[];
+}
 
-export const SortButton = () => {
+export const MenuPopper = ({ menuTitle, options }: MenuPopperProps) => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(1);
 
@@ -26,35 +23,8 @@ export const SortButton = () => {
   ) => {
     setSelectedIndex(index);
   };
-
-  return (
-    <>
-      <Button
-        sx={{
-          boxShadow: "none",
-          fontWeight: 500,
-          color: "#b3b3b3",
-          textTransform: "none",
-          fontSize: ".6em",
-          padding: "6px 12px",
-          lineHeight: 1.5,
-          transition: "all 0.3s ease",
-          backgroundColor: "transparent",
-          borderColor: "transparent",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "transparent",
-            boxShadow: "none",
-            color: "#fff",
-            transform: "scale(1.1)",
-          },
-        }}
-        disableRipple
-        variant="contained"
-        onClick={openPopover}
-      >
-        {sortingOptions[selectedIndex]}
-      </Button>
+  return {
+    Component: () => (
       <Menu
         open={!!anchorEl}
         anchorEl={anchorEl}
@@ -76,14 +46,16 @@ export const SortButton = () => {
           },
         }}
       >
-        <Typography
-          className="px-4 py-2 opacity-60 text-xs"
-          fontWeight={500}
-          fontSize={"0.75rem"}
-        >
-          Sort by
-        </Typography>
-        {sortingOptions.map((option, index) => {
+        {menuTitle && (
+          <Typography
+            className="px-4 py-2 opacity-60 text-xs"
+            fontWeight={500}
+            fontSize={"0.75rem"}
+          >
+            {menuTitle}
+          </Typography>
+        )}
+        {options.map((option, index) => {
           const isSelected = index === selectedIndex;
           return (
             <MenuItem
@@ -106,11 +78,11 @@ export const SortButton = () => {
               >
                 {option}
               </Typography>
-              {isSelected && <CheckIcon fontSize="small" />}
             </MenuItem>
           );
         })}
       </Menu>
-    </>
-  );
+    ),
+    openPopover,
+  };
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import starboy from "../../../../public/theWeeknd_starboy.png";
+import starboy from "../../../../../public/theWeeknd_starboy.png";
 import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import { Link } from "@tanstack/react-router";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
