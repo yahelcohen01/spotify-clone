@@ -1,0 +1,7 @@
+.shrink-button {
+  transition: transform 0.001s ease-in-out;
+}
+
+.shrink-button.shrink {
+  transform: scale(0.9); /* Adjust the scale factor as needed */
+}
