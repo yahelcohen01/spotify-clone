@@ -1,41 +1,46 @@
+import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   Card,
   CardContent,
   Chip,
+  Grid,
   IconButton,
-  ImageListItem,
   Tooltip,
-  Typography,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import { useContext } from "react";
+import { LibraryPlaylistCard } from "./LibraryPlaylistCard";
 import { ThemeContext, themeContext } from "../../../../theme/Theme";
-import { SortButton } from "./SortButton";
-import { LibraryButton } from "./LibraryButton";
 import { ButtonsGroup } from "./ButtonsGroup";
-import LikedSongs from "../../../../../public/liked_songs.jpg";
-import DarkNecessities from "../../../../../public/dark_necessities_red_hot_chili_peppers.jpg";
-import rihannaLoud from "../../../../../public/rihanna_loud.png";
+import ExpandableSearchBar from "./ExpandableSearchBar";
+import { LibraryButton } from "./LibraryButton";
+import { SortButton } from "./SortButton";
 
-const Playlists = [
+export type PlaylistInfo = {
+  name: string;
+  type: string;
+  owner: string;
+  image: string;
+};
+
+const Playlists: PlaylistInfo[] = [
   {
     name: "Liked Songs",
     type: "Playlist",
     owner: "Yahel",
-    image: LikedSongs,
+    image: "/liked_songs.jpg",
   },
   {
     name: "Loud",
     type: "Album",
     owner: "Rihanna",
-    image: rihannaLoud,
+    image: "/rihanna_loud.png",
   },
   {
     name: "Dark Necessities",
     type: "Album",
     owner: "Red Hot Chili Peppers",
-    image: DarkNecessities,
+    image: "/dark_necessities_red_hot_chili_peppers.jpg",
   },
 ];
 
@@ -66,13 +71,9 @@ export const Library = () => {
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Tooltip title="Search in Your Library" placement="top-start">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
+                <ExpandableSearchBar />
               </Tooltip>
-              <SortButton variant="contained" disableRipple>
-                Recents
-              </SortButton>
+              <SortButton />
             </Box>
           </>
         )}
@@ -91,37 +92,7 @@ export const Library = () => {
               },
             }}
           >
-            <ImageListItem key={`${i}`}>
-              <img
-                style={{ borderRadius: "4px" }}
-                src={`${item.image}?w=48&h=48&fit=crop&auto=format`}
-                alt={item.name}
-                loading="lazy"
-              />
-            </ImageListItem>
-            {regularView && (
-              <Box
-                sx={{ display: "grid", alignItems: "start", padding: ".3rem" }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  lineHeight={"normal"}
-                  alignSelf={"center"}
-                  fontWeight={400}
-                >
-                  {item.name}
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  lineHeight={"normal"}
-                  alignItems={"end"}
-                  fontWeight={400}
-                  sx={{ opacity: 0.6 }}
-                >
-                  {item.type} • {item.owner}
-                </Typography>
-              </Box>
-            )}
+            <LibraryPlaylistCard item={item} index={i} />
           </Box>
         ))}
       </CardContent>
