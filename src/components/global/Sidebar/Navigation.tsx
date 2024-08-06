@@ -18,7 +18,7 @@ export const Navigation = () => {
   } = useRouterState();
   const { regularView } = useContext(themeContext) as ThemeContext;
   return (
-    <Card sx={{ display: "grid", alignItems: "center" }}>
+    <Card sx={{ display: "grid", alignItems: "center", height:112}}>
       <MenuList>
         <Link to="/">
           <MenuItem

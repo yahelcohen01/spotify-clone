@@ -8,7 +8,8 @@ export const Controls = () => {
   return (
     <Box
       sx={{
-        minHeight: "9vh",
+        height: 72,
+        width:'100%',
         display: "flex",
         justifyContent: "space-between",
         paddingRight: "1rem",

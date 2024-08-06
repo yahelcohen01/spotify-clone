@@ -1,6 +1,6 @@
 import { useState } from "react";
 import starboy from "../../../../../public/theWeeknd_starboy.png";
-import { Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import { Link } from "@tanstack/react-router";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -21,7 +21,7 @@ export const SongInfo = () => {
       isInLibrary: !exampleTrack.isInLibrary,
     });
   return (
-    <>
+    <Grid container>
       <Box alignSelf={"center"}>
         <img
           style={{
@@ -103,6 +103,6 @@ export const SongInfo = () => {
           </Tooltip>
         )}
       </Box>
-    </>
+    </Grid>
   );
 };

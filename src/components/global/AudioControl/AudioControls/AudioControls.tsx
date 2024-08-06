@@ -1,4 +1,4 @@
-import { Box, IconButton, Tooltip } from "@mui/material";
+import { Box, Grid, IconButton, Tooltip } from "@mui/material";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import FirstPageOutlinedIcon from "@mui/icons-material/FirstPageOutlined";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
@@ -19,7 +19,7 @@ export const AudioControls = () => {
   };
 
   return (
-    <>
+    <Grid container>
       <Box
         sx={{
           display: "flex",
@@ -118,6 +118,6 @@ export const AudioControls = () => {
       >
         <AudioSlider />
       </Box>
-    </>
+    </Grid>
   );
 };

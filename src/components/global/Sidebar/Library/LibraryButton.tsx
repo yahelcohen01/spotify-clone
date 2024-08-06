@@ -31,7 +31,7 @@ export const LibraryButton = () => {
         {regularView && (
           <Typography
             alignSelf={"center"}
-            sx={{ position: "fixed", left: "70px" }}
+            
           >
             Your Library
           </Typography>
