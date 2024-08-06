@@ -19,7 +19,7 @@ export const AudioControls = () => {
   };
 
   return (
-    <Grid container>
+    <>
       <Box
         sx={{
           display: "flex",
@@ -118,6 +118,6 @@ export const AudioControls = () => {
       >
         <AudioSlider />
       </Box>
-    </Grid>
+    </>
   );
 };

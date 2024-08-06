@@ -16,13 +16,12 @@ export const Sidebar = ({}: SidebarProps) => {
   return (
     <Box
       sx={{
-        display: "grid",
         width: regularView ? sidebarWidth : "68px !important",
         minWidth: "68px",
         height: '100%',
-        gridTemplateRows: "20% 80%",
       }}
     >
+
       <Navigation />
       <Library />
     </Box>
