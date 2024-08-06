@@ -24,6 +24,13 @@ Stack: React TypeScript Vite Mui
    pnpm run dev
    ```
 
+### env template
+
+```env
+
+VITE_API_URL=http://localhost:<YOUR_PORT_NUMBER>
+```
+
 ## Digitech
 
 Digitech team - feel free to add your changes, please try to maintain the highest code standard you can!

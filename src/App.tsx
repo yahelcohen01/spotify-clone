@@ -1,12 +1,12 @@
-import "./theme/globals.css";
 import {
   NotFoundRoute,
   RouterProvider,
   createRouter,
 } from "@tanstack/react-router";
+import { NotFound } from "./components/notFound/NotFound";
 import { routeTree } from "./routeTree.gen";
 import { Route } from "./routes/__root";
-import { NotFound } from "./components/notFound/NotFound";
+import "./theme/globals.css";
 
 const notFoundRoute = new NotFoundRoute({
   getParentRoute: () => Route,
