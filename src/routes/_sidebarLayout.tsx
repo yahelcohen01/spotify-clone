@@ -9,6 +9,7 @@ export const Route = createFileRoute("/_sidebarLayout")({
     <Grid container height="100%">
       <Grid item xs={12}
         style={{
+          height:"100vh-100px",
           display: "flex",
           padding: ".5rem",
           columnGap: ".5rem",
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/_sidebarLayout")({
         <Sidebar />
         <Outlet />
       </Grid>
-      <Grid item xs={12} padding={".5rem"}>
+      <Grid item xs={12} padding={".5rem"} height='100px'>
         <Controls />
       </Grid>
     </Grid>
