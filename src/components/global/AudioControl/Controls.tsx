@@ -9,7 +9,7 @@ export const Controls = () => {
     <Box
       sx={{
         height: 72,
-        width:'100%',
+        width: "100%",
         display: "flex",
         justifyContent: "space-between",
         paddingRight: "1rem",
