@@ -21,7 +21,7 @@ export const SongInfo = () => {
       isInLibrary: !exampleTrack.isInLibrary,
     });
   return (
-    <Grid container>
+    <>
       <Box alignSelf={"center"}>
         <img
           style={{
@@ -103,6 +103,6 @@ export const SongInfo = () => {
           </Tooltip>
         )}
       </Box>
-    </Grid>
+    </>
   );
 };
