@@ -47,7 +47,7 @@ export const Route = createFileRoute("/_sidebarLayout")({
             ref={cardRef}
             sx={{
               width: "100%",
-              background: "linear-gradient(#222, #121212)",
+              background: "linear-gradient(#222 0px, #121212 290px)",
               height: "100%",
               overflowY: "scroll",
             }}
