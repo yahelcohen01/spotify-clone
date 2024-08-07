@@ -1,6 +1,7 @@
 import { InputBase, styled, alpha } from "@mui/material";
 
 export const CustomSearchInput = styled(InputBase)(({ theme }) => ({
+  width: 364,
   "label + &": {
     marginTop: theme.spacing(3),
   },
