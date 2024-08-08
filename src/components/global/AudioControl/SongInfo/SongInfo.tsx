@@ -1,14 +1,14 @@
 import { useState } from "react";
-import starboy from "../../../../../public/theWeeknd_starboy.png";
-import { Box, IconButton, Tooltip, Typography } from "@mui/material";
-import { Link } from "@tanstack/react-router";
+
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { Link } from "@tanstack/react-router";
 
 const values = {
   name: "I Feel It Coming",
   artists: ["The Weeknd", "Daft Punk"],
-  image: starboy,
+  image: "/theWeeknd_starboy.png",
   isInLibrary: true,
 };
 
