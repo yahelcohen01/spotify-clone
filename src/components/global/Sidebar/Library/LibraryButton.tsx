@@ -21,7 +21,7 @@ export const LibraryButton = () => {
           "&:hover": { opacity: 1 },
         }}
       >
-        <ListItemIcon>
+        <ListItemIcon sx={{ minWidth: "50px" }}>
           {pathname === "/Library" ? (
             <LibraryBooksIcon sx={{ fontSize: "29px" }} />
           ) : (
@@ -29,12 +29,7 @@ export const LibraryButton = () => {
           )}
         </ListItemIcon>
         {regularView && (
-          <Typography
-            alignSelf={"center"}
-            sx={{ position: "fixed", left: "70px" }}
-          >
-            Your Library
-          </Typography>
+          <Typography alignSelf={"center"}>Your Library</Typography>
         )}
       </Box>
     </Link>

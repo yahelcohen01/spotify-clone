@@ -18,7 +18,7 @@ export const Navigation = () => {
   } = useRouterState();
   const { regularView } = useContext(themeContext) as ThemeContext;
   return (
-    <Card sx={{ display: "grid", alignItems: "center" }}>
+    <Card sx={{ display: "grid", alignItems: "center", height: 112 }}>
       <MenuList>
         <Link to="/">
           <MenuItem
@@ -49,8 +49,6 @@ export const Navigation = () => {
             {regularView && (
               <Typography
                 sx={{
-                  position: "fixed",
-                  left: "70px",
                   "&:hover": {
                     transition: 0.5,
                     color: "white",
@@ -95,10 +93,7 @@ export const Navigation = () => {
               <SearchIcon sx={{ fontSize: "33px" }} />
             </ListItemIcon>
             {regularView && (
-              <Typography
-                color={pathname === "/search" ? "white" : "#b3b3b3"}
-                sx={{ position: "fixed", left: "70px" }}
-              >
+              <Typography color={pathname === "/search" ? "white" : "#b3b3b3"}>
                 Search
               </Typography>
             )}
