@@ -1,4 +1,4 @@
-import { Box, Card } from "@mui/material";
+import { Card, Grid } from "@mui/material";
 import { createFileRoute } from "@tanstack/react-router";
 import { Sidebar } from "../components/global/Sidebar/Sidebar";
 import { Outlet } from "@tanstack/react-router";
@@ -7,11 +7,13 @@ import { AppToolBar } from "../components/global/AppToolBar/AppToolBar";
 
 export const Route = createFileRoute("/_sidebarLayout")({
   component: () => (
-    <>
-      <Box
+    <Grid container height="100%">
+      <Grid
+        item
+        xs={12}
         style={{
+          height: "calc(100% - 72px)",
           display: "flex",
-          minHeight: "87vh",
           padding: ".5rem",
           columnGap: ".5rem",
         }}
@@ -21,8 +23,8 @@ export const Route = createFileRoute("/_sidebarLayout")({
           <AppToolBar />
           <Outlet />
         </Card>
-      </Box>
+      </Grid>
       <Controls />
-    </>
+    </Grid>
   ),
 });

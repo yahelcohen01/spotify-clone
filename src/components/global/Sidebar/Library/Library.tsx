@@ -1,4 +1,3 @@
-import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   Card,
@@ -48,7 +47,12 @@ export const Library = () => {
   const { regularView } = useContext(themeContext) as ThemeContext;
 
   return (
-    <Card sx={{ marginTop: ".5rem" }}>
+    <Card
+      sx={{
+        marginTop: ".5rem",
+        height: "calc(100% - 120px)",
+      }}
+    >
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <LibraryButton />
         {regularView && <ButtonsGroup />}
