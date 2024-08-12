@@ -14,7 +14,7 @@ export const UserProfileButton = () => {
 
   useEffect(() => {
     axiosInstance
-      .get<{ user: User }>("/api/user/name/Alice")
+      .get<{ user: User }>("/api/user/name/User%20One")
       .then((res) => {
         setUser(res.data.user);
       })
