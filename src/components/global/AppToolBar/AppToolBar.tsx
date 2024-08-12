@@ -1,7 +1,6 @@
-import { AppBar, Box, IconButton, Toolbar, Tooltip } from "@mui/material";
-import { CustomSearchInput } from "../../search/CustomSearchInput";
-
+import { AppBar, Toolbar } from "@mui/material";
 import { useRouterState } from "@tanstack/react-router";
+import { CustomSearchInput } from "../../search/CustomSearchInput";
 import { BackAndForward } from "./components/BackAndForward";
 import { UserProfileButton } from "./components/UserProfileButton";
 

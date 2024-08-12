@@ -1,21 +1,25 @@
-import { Box, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Box, Tooltip } from "@mui/material";
+import { useEffect, useState } from "react";
+import axiosInstance from "../../../../helpers/axios";
+import type { User } from "../../../../types/user";
 import { MenuPopper } from "../../general/menuPopper";
-
-const user = {
-  firstName: "Yahel",
-  lastName: "Cohen",
-};
 
 const userOptions = ["Account", "Profile", "Settings"];
 
 export const UserProfileButton = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(1);
+  const [user, setUser] = useState<User | null>(null);
 
-  // const openPopover = (e: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorEl(e.currentTarget);
-  // };
+  useEffect(() => {
+    axiosInstance
+      .get<{ user: User }>("/api/user/name/Alice")
+      .then((res) => {
+        setUser(res.data.user);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   const closePopover = () => {
     setAnchorEl(null);
@@ -32,7 +36,7 @@ export const UserProfileButton = () => {
 
   return (
     <>
-      <Tooltip title={user.firstName} placement="bottom">
+      <Tooltip title={user?.name} placement="bottom">
         <Box
           sx={{
             display: "grid",
@@ -50,7 +54,7 @@ export const UserProfileButton = () => {
           }}
           onClick={openPopover}
         >
-          {user.firstName[0]}
+          <img src={user?.image?.url} alt={user?.name} />
         </Box>
       </Tooltip>
       <Component />
