@@ -25,6 +25,10 @@ export const UserProfileButton = () => {
     setAnchorEl(null);
   };
 
+  // const openPopover = (e: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(e.currentTarget);
+  // };
+
   const handleMenuItemClick = (
     event: React.MouseEvent<HTMLElement>,
     index: number
