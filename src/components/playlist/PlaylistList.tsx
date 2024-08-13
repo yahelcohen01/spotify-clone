@@ -10,8 +10,9 @@ const PlaylistList: React.FC<PlaylistListProps> = ({ playlists }) => {
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
       {playlists.map((playlist) => (
-        <PlaylistCard key={playlist.id} {...playlist} />
+        <PlaylistCard key={playlist.id} playlist={playlist} />
       ))}
     </div>
   );
 };
+export default PlaylistList;
