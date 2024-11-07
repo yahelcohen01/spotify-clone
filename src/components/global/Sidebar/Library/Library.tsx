@@ -1,12 +1,4 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  Chip,
-  Grid,
-  IconButton,
-  Tooltip,
-} from "@mui/material";
+import { Box, Card, CardContent, Chip, Grid, Tooltip } from "@mui/material";
 import { useContext } from "react";
 import { LibraryPlaylistCard } from "./LibraryPlaylistCard";
 import { ThemeContext, themeContext } from "../../../../theme/Theme";
@@ -65,21 +57,21 @@ export const Library = () => {
         }}
       >
         {regularView && (
-          <>
-            <Box>
-              <Chip
-                label={"Playlists"}
-                size="medium"
-                sx={{ fontWeight: 400 }}
-              />
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-              <Tooltip title="Search in Your Library" placement="top-start">
-                <ExpandableSearchBar />
-              </Tooltip>
+          <Grid container gap={1.5}>
+            <Grid item container gap={1}>
+              <Chip label={"Playlists"} size="medium" />
+              <Chip label={"Artists"} size="medium" />
+              <Chip label={"Albums"} size="medium" />
+            </Grid>
+            <Grid container item justifyContent={"space-between"}>
+              <Grid item xs={9}>
+                <Tooltip title="Search in Your Library" placement="top-start">
+                  <ExpandableSearchBar />
+                </Tooltip>
+              </Grid>
               <SortButton />
-            </Box>
-          </>
+            </Grid>
+          </Grid>
         )}
         {Playlists.map((item, i) => (
           <Box

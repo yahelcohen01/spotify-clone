@@ -1,7 +1,14 @@
-import Card from "@mui/material/Card";
+import { Grid } from "@mui/material";
+import { MainPlaylists } from "./MainPlaylists";
 
 export function Home() {
   return (
-    <div style={{ width: "100%", height: 1000, overflowY: "scroll" }}>asd</div>
+    <Grid
+      alignContent="flex-start"
+      style={{ width: "100%", height: 1000, overflowY: "scroll" }}
+      container
+    >
+      <MainPlaylists />
+    </Grid>
   );
 }
